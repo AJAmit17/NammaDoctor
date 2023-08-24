@@ -2,17 +2,20 @@ from django.shortcuts import render, redirect
 from datetime import datetime, timedelta
 from .models import *
 from django.contrib import messages
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
+from datetime import datetime, timedelta
 
-def index(request):
-    return render(request, "booking/index.html",{})
 
+@login_required
 def booking(request):
     #Calling 'validWeekday' Function to Loop days you want in the next 21 days:
     weekdays = validWeekday(22)
 
     #Only show the days that are not full:
     validateWeekdays = isWeekdayValid(weekdays)
-    
+    admin_users = User.objects.filter(is_staff=True)
+    appointments = Appointment.objects.filter(user=request.user)
 
     if request.method == 'POST':
         service = request.POST.get('service')
@@ -31,42 +34,54 @@ def booking(request):
     return render(request, 'booking/booking.html', {
             'weekdays':weekdays,
             'validateWeekdays':validateWeekdays,
+            'admin_users': admin_users,
         })
+
 
 def bookingSubmit(request):
     user = request.user
+    
+    doctor_username = 'admin'
+    try:
+        doctor = User.objects.get(username=doctor_username, is_staff=True)  # Retrieve the first admin user (doctor)
+    except User.DoesNotExist:
+        doctor = None  # Handle the case when the admin doctor is not found
+
     times = [
         "3 PM", "3:30 PM", "4 PM", "4:30 PM", "5 PM", "5:30 PM", "6 PM", "6:30 PM", "7 PM", "7:30 PM"
     ]
+    
     today = datetime.now()
     minDate = today.strftime('%Y-%m-%d')
     deltatime = today + timedelta(days=21)
     strdeltatime = deltatime.strftime('%Y-%m-%d')
     maxDate = strdeltatime
 
-    #Get stored data from django session:
     day = request.session.get('day')
     service = request.session.get('service')
-    
-    #Only show the time of the day that has not been selected before:
     hour = checkTime(times, day)
+
     if request.method == 'POST':
         time = request.POST.get("time")
         date = dayToWeekday(day)
 
-        if service != None:
-            if day <= maxDate and day >= minDate:
+        if service:
+            if minDate <= day <= maxDate:
                 if date == 'Monday' or date == 'Saturday' or date == 'Wednesday':
                     if Appointment.objects.filter(day=day).count() < 11:
                         if Appointment.objects.filter(day=day, time=time).count() < 1:
-                            AppointmentForm = Appointment.objects.get_or_create(
-                                user = user,
-                                service = service,
-                                day = day,
-                                time = time,
+                            appointment, created = Appointment.objects.get_or_create(
+                                user=user,
+                                doctor=doctor,  # Set the admin doctor as the doctor
+                                service=service,
+                                day=day,
+                                time=time,
                             )
-                            messages.success(request, "Appointment Saved!")
-                            return redirect('index')
+                            if created:
+                                messages.success(request, "Appointment Saved!")
+                            else:
+                                messages.success(request, "The Selected Time Has Been Reserved Before!")
+                            return redirect('booking')
                         else:
                             messages.success(request, "The Selected Time Has Been Reserved Before!")
                     else:
@@ -74,14 +89,14 @@ def bookingSubmit(request):
                 else:
                     messages.success(request, "The Selected Date Is Incorrect")
             else:
-                    messages.success(request, "The Selected Date Isn't In The Correct Time Period!")
+                messages.success(request, "The Selected Date Isn't In The Correct Time Period!")
         else:
             messages.success(request, "Please Select A Service!")
 
-
     return render(request, 'booking/bookingSubmit.html', {
-        'times':hour,
+        'times': hour,
     })
+
 
 def userPanel(request):
     user = request.user
@@ -159,7 +174,7 @@ def userUpdateSubmit(request, id):
                                 time = time,
                             ) 
                             messages.success(request, "Appointment Edited!")
-                            return redirect('index')
+                            return redirect('booking')
                         else:
                             messages.success(request, "The Selected Time Has Been Reserved Before!")
                     else:

@@ -1,4 +1,3 @@
-
 from django.db import models
 from datetime import datetime
 from django.contrib.auth.models import User
@@ -8,7 +7,7 @@ SERVICE_CHOICES = (
     ("Nursing care", "Nursing care"),
     ("Medical social services", "Medical social services"),
     ("Homemaker or basic assistance care", "Homemaker or basic assistance care"),
-    )
+)
 TIME_CHOICES = (
     ("3 PM", "3 PM"),
     ("3:30 PM", "3:30 PM"),
@@ -23,10 +22,12 @@ TIME_CHOICES = (
 )
 
 class Appointment(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True, related_name='user_appointments')
+    doctor = models.ForeignKey(User, on_delete=models.CASCADE, limit_choices_to={'is_staff': True}, related_name='doctor_appointments')
     service = models.CharField(max_length=50, choices=SERVICE_CHOICES, default="Doctor care")
     day = models.DateField(default=datetime.now)
     time = models.CharField(max_length=10, choices=TIME_CHOICES, default="3 PM")
     time_ordered = models.DateTimeField(default=datetime.now, blank=True)
+
     def __str__(self):
-        return f"{self.user.username} | day: {self.day} | time: {self.time}"
+        return f"{self.user.username} | doctor: {self.doctor.username} | day: {self.day} | time: {self.time}"
