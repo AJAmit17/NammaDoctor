@@ -1,0 +1,11 @@
+{% extends 'ndapp/base.html' %}
+
+{% block content %}
+  <h1>Reminders</h1>
+  <ul>
+    {% for reminder in reminders %}
+      <li><a href="{% url 'reminder_detail' reminder.pk %}">{{ reminder.title }}</a></li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'reminder_create' %}">Create Reminder</a>
+{% endblock %}

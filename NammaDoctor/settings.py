@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'chatbot.apps.ChatbotConfig',
     'remedies.apps.RemediesConfig',
     'booking.apps.BookingConfig',
+    'medreminder.apps.MedreminderConfig',
     #pre-installed apps
     'django.contrib.admin',
     'django.contrib.auth',

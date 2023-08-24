@@ -1,0 +1,10 @@
+{% extends 'ndapp/base.html' %}
+
+{% block content %}
+  <h1>{{ reminder.title }}</h1>
+  <p>{{ reminder.description }}</p>
+  <p>Date and Time: {{ reminder.date_time }}</p>
+  <a href="{% url 'reminder_update' reminder.pk %}">Edit</a>
+  <a href="{% url 'reminder_delete' reminder.pk %}">Delete</a>
+  <a href="{% url 'reminder_list' %}">Back to List</a>
+{% endblock %}
