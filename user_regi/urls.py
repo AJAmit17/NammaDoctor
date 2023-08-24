@@ -10,7 +10,7 @@ urlpatterns = [
     path('profile/',user_views.profile,name='user-profile'),
      path('password-reset/',
          auth_views.PasswordResetView.as_view(
-             template_name='user_regi/password_reset.html'
+             template_name='user_regi/password_reset.html',extra_context = {'title':'Password reset'}
          ),
          name='password_reset'),
     path('password-reset/done/',

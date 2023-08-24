@@ -6,6 +6,12 @@ class Medicine(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2)
     description = models.TextField()
 
+    # Conversion rate from USD to INR
+    USD_TO_INR_CONVERSION_RATE = 73.5  # Update this as needed
+
+    def price_in_inr(self):
+        return self.price*self.USD_TO_INR_CONVERSION_RATE
+
     def __str__(self):
         return self.name
 
@@ -24,3 +30,4 @@ class OrderItem(models.Model):
 
     def __str__(self):
         return f"OrderItem - Order: {self.order.id}, Medicine: {self.medicine.name}"
+
