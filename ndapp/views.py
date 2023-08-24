@@ -48,3 +48,18 @@ def medicalNews(requests):
     return render(requests, 'ndapp/medicalnews.html',{
         'title': 'Medical News'
     })
+
+def healthtopics(requests):
+    return render(requests, 'ndapp/healthtopics.html',{
+        'title': 'Health Topics'
+    })
+
+def termsandconditions(requests):
+    return render(requests, 'ndapp/tandc.html',{
+        'title': 'Terms and Conditions'
+    })
+
+def privacypolicy(requests):
+    return render(requests, 'ndapp/pp.html',{
+        'title': 'Privacy Policy'
+    })
