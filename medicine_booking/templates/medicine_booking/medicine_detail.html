@@ -1,0 +1,14 @@
+{% extends 'ndapp/base.html' %}
+
+{% block content %}
+    <h1>{{ medicine.name }} Details</h1>
+    <p>{{ medicine.description }}</p>
+    <p>Price: ${{ medicine.price }}</p>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.media }}
+        {{ form.quantity.label_tag }}
+        {{ form.quantity }}
+        <button type="submit" class="btn btn-success">Add to Cart</button>
+    </form>
+{% endblock %}

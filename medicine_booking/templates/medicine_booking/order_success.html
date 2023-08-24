@@ -1,0 +1,13 @@
+{% extends 'ndapp/base.html' %}
+
+{% block content %}
+    <h1>Order Successful</h1>
+    <p>Your order has been placed successfully!</p>
+    <h2>Ordered Items:</h2>
+    <ul>
+        {% for item in ordered_items %}
+            <li>{{ item.medicine.name }} - Quantity: {{ item.quantity }}</li>
+        {% endfor %}
+    </ul>
+    <p>Total Price: ${{ total_price|floatformat:2 }}</p>
+{% endblock %}
