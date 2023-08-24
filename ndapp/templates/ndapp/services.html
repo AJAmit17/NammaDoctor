@@ -4,21 +4,86 @@
 
 {% block content %}
     <div class="container py-4">
-        <h2>Services</h2>
-        <div class="py-3 flex flex-row">
-            <ol class="flex flex-row">
-                <li><a href="{% url 'doctors_list' %}">Doctors Near Me</a></li>
-                <li><a href="#">Emergency Helplines</a></li>
-                <li><a href="{% url 'chatbot' %}">Ai Doctor</a></li>
-                <li><a href="#">Medical Assistance</a></li>
-                <li><a href="{% url 'remedy_list' %}">Remedies</a></li>
-                <li><a href="{% url 'booking' %}">booking schedule</a></li>
-                <li><a href="{% url 'index' %}">booking</a></li>
-                <li><a href="{% url 'bookingSubmit' %}">booking submit</a></li>
-                <li><a href="{% url 'userPanel' %}">User panel</a></li>
-                <li><a href="{% url 'reminder_list' %}">Reminders</a></li>
-                <li><a href="{% url 'medicine_list' %}">Reminders</a></li>
-            </ol>
+        <h2 class="text-center mb-4">Services</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <a href="{% url 'doctors_list' %}" class="card-link">Doctors Near Me</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <a href="#" class="card-link">Emergency Helplines</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <a href="{% url 'chatbot' %}" class="card-link">Ai Doctor</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <a href="#" class="card-link">Medical Assistance</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <a href="{% url 'remedy_list' %}" class="card-link">Remedies</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <a href="{% url 'booking' %}" class="card-link">Booking Schedule</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <a href="{% url 'index' %}" class="card-link">Booking</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <a href="{% url 'bookingSubmit' %}" class="card-link">Booking Submit</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <a href="{% url 'userPanel' %}" class="card-link">User Panel</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <a href="{% url 'reminder_list' %}" class="card-link">Reminders</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <a href="{% url 'medicine_list' %}" class="card-link">Order Medicines</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+    
 {% endblock %}
