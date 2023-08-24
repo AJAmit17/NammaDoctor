@@ -1,0 +1,83 @@
+{% extends 'ndapp/base.html' %}
+
+{% block content %}
+    <h1>Available Medicines</h1>
+    <div class="mb-3">
+        <input type="text" id="medicineSearch" class="form-control" placeholder="Search Medicines">
+    </div>
+    <div id="paginationContainer" class="row row-cols-1 row-cols-md-3 g-4">
+        {% for medicine in medicines %}
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ medicine.name }}</h5>
+                        <p class="card-text">{{ medicine.description }}</p>
+                        <form method="post">
+                            {% csrf_token %}
+                            {{ form.media }}
+                            <input type="hidden" name="medicine_id" value="{{ medicine.id }}">
+                            {{ form.quantity.label_tag }}
+                            {{ form.quantity }}
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-success">Add to Cart</button>
+                            </div>
+                        </form>
+                        <div class="mt-2 text-center">
+                            <a href="{% url 'medicine_detail' medicine.id %}" class="btn btn-primary">Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="pagination-container d-flex justify-content-center my-2">
+        <ul class="pagination">
+            {% if medicines.has_previous %}
+                <li class="page-item"><a class="page-link" href="?page=1">First</a></li>
+                <li class="page-item"><a class="page-link" href="?page={{ medicines.previous_page_number }}">Previous</a></li>
+            {% endif %}
+            
+            <li class="page-item active"><span class="page-link">{{ medicines.number }}</span></li>
+            
+            {% if medicines.has_next %}
+                <li class="page-item"><a class="page-link" href="?page={{ medicines.next_page_number }}">Next</a></li>
+                <li class="page-item"><a class="page-link" href="?page={{ medicines.paginator.num_pages }}">Last</a></li>
+            {% endif %}
+        </ul>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const medicineList = document.getElementById("medicineList");
+            const medicineSearch = document.getElementById("medicineSearch");
+            const searchResults = document.getElementById("searchResults");
+
+            medicineSearch.addEventListener("input", function() {
+                const searchTerm = medicineSearch.value.trim().toLowerCase();
+                if (searchTerm === "") {
+                    medicineList.style.display = "block";
+                    searchResults.style.display = "none";
+                    return;
+                }
+
+                const filteredMedicines = Array.from(medicineList.children).filter(card => {
+                    const medicineName = card.querySelector(".card-title").textContent.toLowerCase();
+                    return medicineName.includes(searchTerm);
+                });
+
+                // Display search results
+                medicineList.style.display = "none";
+                searchResults.innerHTML = "";
+                if (filteredMedicines.length > 0) {
+                    searchResults.style.display = "block";
+                    filteredMedicines.forEach(card => {
+                        searchResults.appendChild(card.cloneNode(true));
+                    });
+                } else {
+                    searchResults.style.display = "none";
+                }
+            });
+        });
+    </script>
+{% endblock %}
