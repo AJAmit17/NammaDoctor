@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'booking.apps.BookingConfig',
     'medreminder.apps.MedreminderConfig',
     'medicine_booking.apps.MedicineBookingConfig',
+    'imgtotext.apps.ImgtotextConfig',
     #pre-installed apps
     'django.contrib.admin',
     'django.contrib.auth',

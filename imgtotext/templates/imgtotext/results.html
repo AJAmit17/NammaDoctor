@@ -1,0 +1,7 @@
+{% extends 'ndapp/base.html' %}
+{% block content %}
+<h1>Image to Text Converter - Result</h1>
+<h2>Extracted Text:</h2>
+<pre>{{ extracted_text }}</pre>
+<a href="{% url 'image_to_text' %}">Convert another image</a>
+{% endblock %}
