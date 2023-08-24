@@ -1,0 +1,21 @@
+{% extends 'ndapp/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}User Registration{% endblock %}
+
+{% block content %}
+    <div class="container py-4">
+        <h2>User Registration</h2>
+        <form method="POST" class="mt-4">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+        <div class="border-t border-gray-300 mt-2 pt-2">
+            <small class="text-gray-500">
+                Already have an account? <a class="ml-2 text-blue-500 hover:text-blue-600" href="{% url 'login' %}">Sign In</a>
+            </small>
+        </div>
+    </div>
+{% endblock %}

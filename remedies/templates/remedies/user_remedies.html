@@ -1,0 +1,40 @@
+{% extends 'ndapp/base.html' %}
+
+{% block content %}
+<section class="mt-5">
+  <h2 class="text-center mb-4">User-Submitted Remedies</h2>
+  <div class="row">
+    <!-- Display User-Submitted Remedies -->
+    <!--{% for remedy in user_remedies %}
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ remedy.disease_name }}</h5>
+          <p class="card-text">{{ remedy.remedy }}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}-->
+
+    <!-- User Remedy Submission Form -->
+    <div class="d-flex justify-content-center align-items-center min-vh-100">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Add Your Remedy</h5>
+            <form method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>    
+  </div>
+</section>
+
+<!-- Adding Remedy Form -->
+
+
+{% endblock %}

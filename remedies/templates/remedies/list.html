@@ -1,0 +1,42 @@
+{% extends 'ndapp/base.html' %}
+
+{% block content %}
+<section class="mt-2">
+  <h2 class="text-center mb-4">Common Diseases Remedies</h2>
+  <div class="row">
+    {% for remedy in remedies %}
+    <div class="col-md-4 mb-4">
+      <div class="card">
+        <img src="{{ remedy.image.url }}" class="card-img-top" alt="{{ remedy.name }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ remedy.name }}</h5>
+          <p class="card-text">{{ remedy.description }}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="d-flex justify-content-center mt-4">
+    {% if remedies.has_previous %}
+    <a class="btn btn-outline-secondary mx-1" href="?page=1">First</a>
+    <a class="btn btn-outline-secondary mx-1" href="?page={{ remedies.previous_page_number }}">Previous</a>
+    {% endif %}
+
+    {% for num in remedies.paginator.page_range %}
+    {% if remedies.number == num %}
+    <a class="btn btn-secondary mx-1" href="?page={{ num }}">{{ num }}</a>
+    {% elif num > remedies.number|add:'-3' and num < remedies.number|add:'3' %}
+    <a class="btn btn-outline-secondary mx-1" href="?page={{ num }}">{{ num }}</a>
+    {% endif %}
+    {% endfor %}
+
+    {% if remedies.has_next %}
+    <a class="btn btn-outline-secondary mx-1" href="?page={{ remedies.next_page_number }}">Next</a>
+    <a class="btn btn-outline-secondary mx-1" href="?page={{ remedies.paginator.num_pages }}">Last</a>
+    {% endif %}
+  </div>
+
+  <a href="{% url 'add_remedy' %}">Add your own remedies</a>
+</section>
+{% endblock %}

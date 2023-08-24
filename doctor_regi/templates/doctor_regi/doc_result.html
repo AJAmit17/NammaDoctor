@@ -1,0 +1,42 @@
+{% extends 'ndapp/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Doctor Registration{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Doctor Search Results</h2>
+    <hr>
+    {% if doctors %}
+        <div class="card-deck">
+            {% for doctor in doctors %}
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title">{{ doctor.name }}</h2>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <small>Email: </small><span>{{ doctor.email }}</span>
+                            </li>
+                            <li class="list-group-item">
+                                <small>Specialization: </small><span>{{ doctor.specialization }}</span>
+                            </li>
+                            <li class="list-group-item">
+                                <small>Qualification: </small><span>{{ doctor.qualification }}</span>
+                            </li>
+                            <li class="list-group-item">
+                                <small>Experience: </small><span>{{ doctor.experience }}</span>
+                            </li>
+                            <li class="list-group-item">
+                                <small>Address: </small><span>{{ doctor.address }}</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>No doctors found.</p>
+    {% endif %}
+</div>
+{% endblock %}

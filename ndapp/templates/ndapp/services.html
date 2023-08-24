@@ -1,0 +1,22 @@
+{% extends 'ndapp/base.html' %}
+
+{% block title %}Services{% endblock %}
+
+{% block content %}
+    <div class="container py-4">
+        <h2>Services</h2>
+        <div class="py-3 flex flex-row">
+            <ol class="flex flex-row">
+                <li><a href="{% url 'doctors_list' %}">Doctors Near Me</a></li>
+                <li><a href="#">Emergency Helplines</a></li>
+                <li><a href="{% url 'chatbot' %}">Ai Doctor</a></li>
+                <li><a href="#">Medical Assistance</a></li>
+                <li><a href="{% url 'remedy_list' %}">Remedies</a></li>
+                <li><a href="{% url 'booking' %}">booking schedule</a></li>
+                <li><a href="{% url 'index' %}">booking</a></li>
+                <li><a href="{% url 'bookingSubmit' %}">booking submit</a></li>
+                <li><a href="{% url 'userPanel' %}">User panel</a></li>
+            </ol>
+        </div>
+    </div>
+{% endblock %}
