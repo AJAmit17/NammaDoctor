@@ -38,3 +38,9 @@ def contact(request):
     return render(request, 'ndapp/contact.html', {
         'title': 'Contacts'
     })
+
+def emergencies(requests):
+    return render(requests, 'ndapp/emergencies.html')
+
+def medicalNews(requests):
+    return render(requests, 'ndapp/medicalnews.html')
