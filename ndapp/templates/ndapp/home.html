@@ -18,11 +18,35 @@
             </div>
         </div>
 
-        <section class="jumbotron text-center">
-            <h1>Welcome to Our Medical Apps</h1>
-            <p class="lead">Explore our medical services and features.</p>
-            <a href="#features" class="btn btn-primary">Learn More</a>
-          </section>
+        <section class="jumbotron text-center" style="background-image: url('https://img.freepik.com/free-photo/close-up-doctor-with-stethoscope_23-2149191355.jpg?w=740&t=st=1692872802~exp=1692873402~hmac=4d23df4730ad953a51f4bcb1e9dfec22847218cfb6c7bf214594b71a31b2c221'); background-size: cover;">
+          <div class="bg-overlay"></div>
+          <div class="text-overlay">
+              <h1>Welcome to Our Medical Apps</h1>
+              <p class="lead">Explore our medical services and features.</p>
+              <a href="#features" class="btn btn-primary">Learn More</a>
+          </div>
+      </section>
+      
+      <style>
+          .jumbotron {
+              position: relative;
+          }
+          .bg-overlay {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+          }
+          .text-overlay {
+              position: relative;
+              color: white;
+              z-index: 1;
+          }
+      </style>
+      
+      
         
           <!-- Features Section -->
           <section id="features" class="container mt-5">
