@@ -20,14 +20,14 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
-            <a href="/" class="navbar-brand">MedClick</a>
+            <a href="/" class="navbar-brand"><strong>NammaDoctor</strong></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a href="{% url 'home' %}" class="nav-link">Home</a>
+                        <a href="{% url 'home' %}" class="nav-link"><strong>Home</strong></a>
                     </li>
                     <li class="nav-item">
                         <a href="{% url 'services' %}" class="nav-link">Services</a>
@@ -48,6 +48,44 @@
             </div>
         </div>
     </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary" style="background-color: grey;">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#secondNavbar" aria-controls="secondNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="secondNavbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a href="{% url 'emergencies' %}" class="nav-link" style="opacity: 1; color: white;">Emergencies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'medicalnews' %}" class="nav-link" style="opacity: 1; color: white;">Medical News</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="" class="nav-link" style="opacity: 1; color: white;">Health topics</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" id="careCategoriesDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="opacity: 1; color: white;">Care Categories</a>
+                        <div class="dropdown-menu" aria-labelledby="careCategoriesDropdown">
+                            <a class="dropdown-item" href="#category1" style="opacity: 1;">General Care</a>
+                            <a class="dropdown-item" href="#category2" style="opacity: 1;">Sexual Health</a>
+                            <a class="dropdown-item" href="#category3" style="opacity: 1;">Mental Health</a>
+                            <a class="dropdown-item" href="#category4" style="opacity: 1;">Baby Care</a>
+                            <a class="dropdown-item" href="#category3" style="opacity: 1;">Pregnant Women Care</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    
+    <style>
+        .navbar-dark .navbar-nav .nav-link {
+            opacity: 0.8;
+        }
+    </style>
+    
     
     <!-- Content -->
     <div class="container py-4">
@@ -73,21 +111,21 @@
             <div class="row">
                 <div class="col-md-6 col-lg-3 mb-4">
                     <h3 class="text-lg font-weight-bold mb-4">About</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet.</p>
+                    <p>At Namma Doctor, we are dedicated to providing reliable and up-to-date medical information and resources to empower individuals to make informed decisions about their health and well-being. Our mission is to bridge the gap between medical knowledge and the general public by offering easily accessible and understandable content.</p>
                 </div>
                 <div class="col-md-6 col-lg-3 mb-4">
                     <h3 class="text-lg font-weight-bold mb-4">Categories</h3>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="text-light">Technology</a></li>
-                        <li><a href="#" class="text-light">Travel</a></li>
-                        <li><a href="#" class="text-light">Food</a></li>
+                        <li><a href="#" class="text-light"></a></li>
+                        <li><a href="#" class="text-light">Covid-19</a></li>
+                        <li><a href="#" class="text-light"></a></li>
                         <li><a href="#" class="text-light">Fashion</a></li>
                     </ul>
                 </div>
                 <div class="col-md-6 col-lg-3 mb-4">
                     <h3 class="text-lg font-weight-bold mb-4">Social</h3>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="text-light" target="_blank" rel="noopener">Twitter</a></li>
+                        <li><a href="#" class="text-light" target="_blank" rel="noopener">X</a></li>
                         <li><a href="#" class="text-light" target="_blank" rel="noopener">Facebook</a></li>
                         <li><a href="#" class="text-light" target="_blank" rel="noopener">Instagram</a></li>
                         <li><a href="#" class="text-light" target="_blank" rel="noopener">LinkedIn</a></li>
@@ -95,8 +133,10 @@
                 </div>
                 <div class="col-md-6 col-lg-3 mb-4">
                     <h3 class="text-lg font-weight-bold mb-4">Contact</h3>
-                    <p>Email: querymedclick@gmail.com</p>
-                    <p>Phone: +91 405236789</p>
+                    <p>Email: querynammadoctor@gmail.com</p>
+                    <p>Phone: +91 4872329222
+                        Office: 08419-266139
+                    </p>
                 </div>
             </div>
             <hr class="my-4 border-light">
