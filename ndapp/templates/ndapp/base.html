@@ -27,25 +27,25 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a href="{% url 'home' %}" class="nav-link"><strong>Home</strong></a>
+                        <a href="{% url 'home' %}" class="nav-link text-light"><strong>Home</strong></a>
                     </li>
                     <li class="nav-item">
-                        <a href="{% url 'services' %}" class="nav-link">Services</a>
+                        <a href="{% url 'services' %}" class="nav-link text-light">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{% url 'contact' %}" class="nav-link">Contact</a>
+                        <a href="{% url 'contact' %}" class="nav-link text-light">Contact</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li>
-                        <a href="{% url 'user-profile' %}" class="nav-link">Profile</a>
+                        <a href="{% url 'user-profile' %}" class="nav-link text-light">Profile</a>
                     </li>
                     {% else %}
                     <li>
-                        <a href="{% url 'register' %}" class="nav-link">Register</a>
+                        <a href="{% url 'register' %}" class="nav-link text-light">Register</a>
                     </li>
                     {% endif %}
                 </ul>
-            </div>
+            </div>            
         </div>
     </nav>
     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary" style="background-color: grey;">
@@ -55,8 +55,16 @@
             </button>
             <div class="collapse navbar-collapse" id="secondNavbar">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a href="{% url 'emergencies' %}" class="nav-link" style="opacity: 1; color: white;">Emergencies</a>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" id="careCategoriesDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="opacity: 1; color: white;">Emergencies</a>
+                        <div class="dropdown-menu" aria-labelledby="careCategoriesDropdown">
+                            <a class="dropdown-item" href="{% url 'emergency-guidelines' %}" style="opacity: 1;">Emergency Guidelines</a>
+                            <a class="dropdown-item" href="#category1" style="opacity: 1;">Covid 19 Pendamic</a>
+                            <a class="dropdown-item" href="#category2" style="opacity: 1;">Monkeypox</a>
+                            <a class="dropdown-item" href="#category3" style="opacity: 1;">Hepatitis</a>
+                            <a class="dropdown-item" href="#category4" style="opacity: 1;">Other Epidemics</a>
+                            
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a href="{% url 'medicalnews' %}" class="nav-link" style="opacity: 1; color: white;">Medical News</a>
@@ -111,31 +119,30 @@
             <div class="row">
                 <div class="col-md-6 col-lg-3 mb-4">
                     <h3 class="text-lg font-weight-bold mb-4">About</h3>
-                    <p>At Namma Doctor, we are dedicated to providing reliable and up-to-date medical information and resources to empower individuals to make informed decisions about their health and well-being. Our mission is to bridge the gap between medical knowledge and the general public by offering easily accessible and understandable content.</p>
+                    <p>At Namma Doctor, we are dedicated to providing reliable and up-to-date medical information and resources to empower individuals to make informed decisions about their health and well-being.</p>
                 </div>
                 <div class="col-md-6 col-lg-3 mb-4">
                     <h3 class="text-lg font-weight-bold mb-4">Categories</h3>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="text-light"></a></li>
-                        <li><a href="#" class="text-light">Covid-19</a></li>
-                        <li><a href="#" class="text-light"></a></li>
-                        <li><a href="#" class="text-light">Fashion</a></li>
+                        <li><a href="#" class="text-light">Diet and Nutrients</a></li>
+                        <li><a href="#" class="text-light">Fitness</a></li>
+                        <li><a href="#" class="text-light">Yoga</a></li>
                     </ul>
                 </div>
                 <div class="col-md-6 col-lg-3 mb-4">
                     <h3 class="text-lg font-weight-bold mb-4">Social</h3>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="text-light" target="_blank" rel="noopener">X</a></li>
                         <li><a href="#" class="text-light" target="_blank" rel="noopener">Facebook</a></li>
                         <li><a href="#" class="text-light" target="_blank" rel="noopener">Instagram</a></li>
                         <li><a href="#" class="text-light" target="_blank" rel="noopener">LinkedIn</a></li>
+                        <li><a href="#" class="text-light" target="_blank" rel="noopener">X</a></li>
                     </ul>
                 </div>
                 <div class="col-md-6 col-lg-3 mb-4">
                     <h3 class="text-lg font-weight-bold mb-4">Contact</h3>
                     <p>Email: querynammadoctor@gmail.com</p>
                     <p>Phone: +91 4872329222
-                        Office: 08419-266139
+                        <div>Office: 08419-266139</div>
                     </p>
                 </div>
             </div>

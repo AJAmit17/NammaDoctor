@@ -40,7 +40,7 @@ def contact(request):
     })
 
 def emergencies(requests):
-    return render(requests, 'ndapp/emergencies.html')
+    return render(requests, 'ndapp/egu.html')
 
 def medicalNews(requests):
     return render(requests, 'ndapp/medicalnews.html')
