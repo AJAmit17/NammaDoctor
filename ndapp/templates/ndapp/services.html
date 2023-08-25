@@ -9,7 +9,7 @@
             <div class="col-md-4">
                 <div class="card text-center">
                     <div class="card-body">
-                        <a href="{% url 'doctors_list' %}" class="card-link" target="_blank">Doctors Near Me</a>
+                        <a href="{% url 'doctors_list' %}" class="card-link" target="_blank">Registered Doctors</a>
                     </div>
                 </div>
             </div>
@@ -17,6 +17,13 @@
                 <div class="card text-center">
                     <div class="card-body">
                         <a href="#" class="card-link" target="_blank">Emergency Helplines</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <a href="{% url 'doc_loc' %}" class="card-link" target="_blank">Locate Doctors Near Me</a>
                     </div>
                 </div>
             </div>
@@ -37,7 +44,7 @@
             <div class="col-md-4">
                 <div class="card text-center">
                     <div class="card-body">
-                        <a href="{% url 'remedy_list' %}" class="card-link" target="_blank">Remedies</a>
+                        <a href="{% url 'remedy_list' %}" class="card-link" target="_blank">First Aid</a>
                     </div>
                 </div>
             </div>
@@ -65,7 +72,14 @@
             <div class="col-md-4">
                 <div class="card text-center">
                     <div class="card-body">
-                        <a href="#" class="card-link" target="_blank">Home call medical</a>
+                        <a href="{% url 'image_to_text' %}" class="card-link" target="_blank">Prescription Converter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <a href="#" class="card-link" target="_blank">Home call Medical Services</a>
                     </div>
                 </div>
             </div>

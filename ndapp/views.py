@@ -63,10 +63,3 @@ def privacypolicy(requests):
     return render(requests, 'ndapp/pp.html',{
         'title': 'Privacy Policy'
     })
-
-def locatedoc(requests):
-    mapple_token = os.environ.get('MAPPLES_TOKEN')
-    return render(requests, 'ndapp/maps.html',{
-        'title': 'Locate on Map',
-        'mapple tokens': mapple_token
-    })
