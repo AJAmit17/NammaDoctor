@@ -1,0 +1,14 @@
+{% extends 'ndapp/base.html' %}
+
+{% block content %}
+
+<h1>Image to Text Converter</h1>
+    <form method="post" enctype="multipart/form-data" class="m-4">
+        {% csrf_token %}
+        <label for="image">Select an image:</label>
+        <input type="file" name="image" accept="image/*" class="mx2" required>
+        <div>
+            <button type="submit" class="btn btn-primary my-2">Convert to Text</button>
+        </div>
+    </form>
+{% endblock %}
