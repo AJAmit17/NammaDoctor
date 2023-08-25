@@ -130,5 +130,3 @@ Stay connected with us on social media:
 For any inquiries or support, feel free to contact us.
 
 ---
-
-Replace the placeholders (`#home-page`, `#services`, etc.) with actual content, links, and information relevant to your project. This structured documentation will guide users through the various aspects of your website, enhancing their understanding and usage experience.
