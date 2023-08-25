@@ -26,21 +26,22 @@
     {% csrf_token %}
     {{ user_form.as_p }}
     <div class="mb-4 row">
-      <label for="{{ profile_form.full_name.id_for_label }}" class="col-12 col-sm-4 col-form-label text-sm-end">
-        Image
-      </label>
-      <div class="col-12 col-sm-8">
-        {{ profile_form }}
-      </div>
+        <label for="{{ profile_form.full_name.id_for_label }}" class="col-12 col-sm-4 col-form-label text-sm-end">
+            Image
+        </label>
+        <div class="col-12 col-sm-8">
+          {{ forms.as_p}}
+          {{ profile_form }}
+        </div>
     </div>
     <div class="row justify-content-center">
-      <div class="col-6">
-        <button type="submit" class="btn btn-primary w-100 my-3">
-          Update Profile
-        </button>
-      </div>
+        <div class="col-6">
+            <button type="submit" class="btn btn-primary w-100 my-3">
+                Update Profile
+            </button>
+        </div>
     </div>
-  </form>
+</form>
 </div>
 
 {% endblock %}
