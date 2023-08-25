@@ -1,6 +1,6 @@
 # Project Name Documentation
 
-Welcome to the official documentation for Project Name! In this document, you'll find information about the features, functionality, and usage of our website developed for the hackathon.
+Welcome to the official documentation for NammaDoctor! In this document, you'll find information about the features, functionality, and usage of our website developed for the hackathon.
 
 ## Table of Contents
 
