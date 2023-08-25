@@ -149,8 +149,11 @@ Users can explore a variety of healthcare categories, including:
 
 
 -Diet and Nutrition
+
 -Fitness
+
 -Yoga
+
 These additions should provide a more detailed profile section and expanded categories to cater to diet, nutrition, fitness, and yoga interests.
 - ...
 
