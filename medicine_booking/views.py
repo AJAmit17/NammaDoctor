@@ -22,7 +22,7 @@ def medicine_list(request):
             request.session['cart'] = cart
             return redirect('view_cart')
     
-    return render(request, 'medicine_booking/medicine_list.html', {'medicines': medicines, 'form': form})
+    return render(request, 'medicine_booking/medicine_list.html', {'medicines': medicines, 'form': form, 'title':'Booking'})
 
 def medicine_detail(request, medicine_id):
     medicine = Medicine.objects.get(pk=medicine_id)
