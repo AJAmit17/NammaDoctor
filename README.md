@@ -24,6 +24,43 @@ Welcome to the official documentation for NammaDoctor! In this document, you'll 
 - [Social Media](#social-media)
 - [Contact Us](#contact-us)
 
+- ## Installation <a name="installation"></a>
+To run the NammaDoctor application locally, follow these steps:
+
+1. Clone the repository from GitHub:
+   
+   `git clone <repository-url>`
+   
+   
+2. Create a virtual environment and activate it:
+   
+   `python3 -m venv myenv`
+   
+   `source myenv/bin/activate`
+
+3.Enter Project
+
+   `cd NammaDoctor`
+   
+4. Install the required dependencies:
+   
+   `pip install -r requirements.txt`
+   
+   
+5. Apply the database migrations:
+
+   `python manage.py makemigrations`
+   
+   `python manage.py migrate`
+   
+   
+7. Start the development server:
+   
+   `python manage.py runserver`
+   
+   
+8. Open your web browser and access the application at `http://localhost:8000`.
+
 ## Home Page
 
 The Home Page serves as the landing page for our website. It provides an overview of our services and features, helping users quickly understand what our platform offers.
