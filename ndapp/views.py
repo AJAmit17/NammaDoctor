@@ -63,3 +63,7 @@ def privacypolicy(requests):
     return render(requests, 'ndapp/pp.html',{
         'title': 'Privacy Policy'
     })
+def ec(requests):
+    return render(requests, 'ndapp/emhl.html',{
+        'title': 'Emergency Helplines'
+    })

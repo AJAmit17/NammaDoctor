@@ -10,4 +10,5 @@ urlpatterns = [
     path('health-topics/',views.healthtopics, name="healthtopics"),
     path('terms-and-conditions/',views.termsandconditions, name="tandc"),
     path('privacy-policy/',views.privacypolicy, name="pp"),
+    path('emergency-helplines/',views.ec, name="emhl"),
 ]
