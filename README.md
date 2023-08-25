@@ -127,7 +127,7 @@ Stay connected with us on social media:
 
 ## Contact Us
 
-For any inquiries or support, feel free to [contact us].
+For any inquiries or support, feel free to contact us.
 
 ---
 
