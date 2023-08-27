@@ -35,8 +35,12 @@ To run the NammaDoctor application locally, follow these steps:
 2. Create a virtual environment and activate it:
    
    `python3 -m venv myenv`
-   
+
+   For Mac users:
    `source myenv/bin/activate`
+
+   For Windows users:
+   `myenv\Scripts\activate`
 
 3.Enter Project
 
