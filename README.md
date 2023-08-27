@@ -1,4 +1,4 @@
-# Project Name Documentation
+# NammaDoctor Documentation
 
 Welcome to the official documentation for NammaDoctor! In this document, you'll find information about the features, functionality, and usage of our website developed for the hackathon.
 
