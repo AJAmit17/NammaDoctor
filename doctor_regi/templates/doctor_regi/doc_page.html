@@ -5,5 +5,12 @@
 {% block title %}Doctor Registration{% endblock %}
 
 {% block content %}
-No doctors found
+<div>
+<h2>Doctor Registration</h2>
+    <form method="post" action="{% url 'doc_regi' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Register</button>
+    </form>
+</div>
 {% endblock %}

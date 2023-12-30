@@ -155,7 +155,7 @@ LOGIN_URL = 'login'
 GOOGLE_MAPS_API_KEY = ''
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = ''
+EMAIL_HOST = os.environ.get("EMAIL_HOST")
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get('EMAIL')

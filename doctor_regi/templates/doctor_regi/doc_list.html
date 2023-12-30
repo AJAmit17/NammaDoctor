@@ -44,11 +44,11 @@
       <tbody>
         {% for doctor in doctors %}
           <tr>
-            <td>{{ doctor.name }}</td>
+            <td>{{ doctor.first_name }}</td>
+            <td>{{ doctor.last_name }}</td>
             <td>{{ doctor.email }}</td>
-            <td>{{ doctor.specialization }}</td>
-            <td>{{ doctor.qualification }}</td>
-            <td>{{ doctor.experience }}</td>
+            <td>{{ doctor.phone_number }}</td>
+            <td>{{ doctor.specialty }}</td>
           </tr>
         {% endfor %}
       </tbody>

@@ -13,22 +13,19 @@
             {% for doctor in doctors %}
                 <div class="card mb-4">
                     <div class="card-body">
-                        <h2 class="card-title">{{ doctor.name }}</h2>
+                        <h2 class="card-title">{{ doctor.first_name }}</h2>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">
                                 <small>Email: </small><span>{{ doctor.email }}</span>
                             </li>
                             <li class="list-group-item">
-                                <small>Specialization: </small><span>{{ doctor.specialization }}</span>
+                                <small>Specialization: </small><span>{{doctor.last_name }}</span>
                             </li>
                             <li class="list-group-item">
-                                <small>Qualification: </small><span>{{ doctor.qualification }}</span>
+                                <small>Qualification: </small><span>{{ doctor.phone_number }}</span>
                             </li>
                             <li class="list-group-item">
-                                <small>Experience: </small><span>{{ doctor.experience }}</span>
-                            </li>
-                            <li class="list-group-item">
-                                <small>Address: </small><span>{{ doctor.address }}</span>
+                                <small>Experience: </small><span>{{ doctor.specialty }}</span>
                             </li>
                         </ul>
                     </div>
